@@ -1,0 +1,111 @@
+/* Background and general styles */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://i.imgur.com/kQRD0wF.png');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Panel styles */
+.login-panel {
+    background-color: #000;
+    border: 1px solid #9370DB;  /* Lavender blue */
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(147, 112, 219, 0.3);  /* Lavender blue shadow */
+    transform: translateZ(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.login-panel:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 6px 20px rgba(147, 112, 219, 0.4);  /* Lavender blue shadow */
+}
+
+/* Title inside panel */
+.login-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form and input styles */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;  /* White bottom line initially */
+    padding: 10px 5px;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-input:focus {
+    border-bottom-color: #9370DB;  /* Lavender blue bottom line on focus */
+    box-shadow: 0px 2px 8px rgba(147, 112, 219, 0.7);  /* Glow effect for the bottom line */
+}
+
+.login-input:hover {
+    border-bottom-color: #9370DB;  /* Lavender blue bottom line on hover */
+}
+
+/* Button styles */
+.login-button {
+    padding: 10px;
+    background-color: #9370DB;  /* Lavender blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #7A5FBA;  /* Slightly darker lavender blue */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .login-panel {
+        padding: 15px;
+        width: 100%;
+    }
+}
+
+/* Notification styles */
+.notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Transparent black */
+    color: #fff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+    z-index: 9999;
+    border: 1px solid #9370DB; /* Thin lavender blue border */
+    box-shadow: 0px 4px 15px rgba(147, 112, 219, 0.3); /* Lavender blue shadow for 3D effect */
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+}
+
