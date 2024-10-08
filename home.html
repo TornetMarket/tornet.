@@ -8,10 +8,18 @@
 </head>
 <body>
 
-    <!-- Home page content -->
-    <div class="home-content" style="color: white;">
-        <h1>More coming soon! - UBH</h1>
+    <!-- Home page content with panel -->
+    <div class="home-panel">
+        <h1 class="panel-title">⛏️ Crypto Miner</h1>
+        <div class="crypto-buttons">
+            <button class="crypto-button" onclick="startMining('BTC')">BTC</button>
+            <button class="crypto-button" onclick="startMining('XMR')">XMR</button>
+            <button class="crypto-button" onclick="startMining('ETH')">ETH</button>
+        </div>
     </div>
+
+    <!-- Mining process display (initially hidden) -->
+    <div id="mining-output" class="mining-output"></div>
 
     <!-- Link to script.js -->
     <script src="script.js"></script>
