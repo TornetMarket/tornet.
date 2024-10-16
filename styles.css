@@ -106,7 +106,7 @@ body {
     border: 1px solid #9370DB; /* Thin lavender blue border */
     box-shadow: 0px 4px 15px rgba(147, 112, 219, 0.3); /* Lavender blue shadow for 3D effect */
     transition: opacity 0.3s ease-in-out;
-    opacity: 1;
+    opacity: 3;
 }
 
 
