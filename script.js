@@ -1,3 +1,4 @@
+// Login functionality
 document.querySelector('.login-button').addEventListener('click', function (e) {
     e.preventDefault();
 
@@ -60,15 +61,20 @@ function startMining(cryptoType) {
             "Started."
         ];
 
-        let messageIndex = 0;
-        let messageInterval = setInterval(() => {
-            miningOutput.textContent = messages[messageIndex];
-            messageIndex++;
+        // Shuffle messages
+        shuffleArray(messages);
 
-            // Clear the interval after the last message
-            if (messageIndex === messages.length) {
-                clearInterval(messageInterval);
+        // Function to display the messages with random delays
+        function displayMessages(index) {
+            if (index < messages.length) {
+                miningOutput.textContent = messages[index];
 
+                // Set a random delay between 3 to 8 seconds for the next message
+                const delay = getRandomInt(3000, 8000);
+                setTimeout(() => {
+                    displayMessages(index + 1);
+                }, delay);
+            } else {
                 // Step 2: After botnet connection, initiate the mining process
                 setTimeout(() => {
                     miningOutput.textContent = `${cryptoType} process initiated.`;
@@ -77,7 +83,10 @@ function startMining(cryptoType) {
                     }, 2000);
                 }, 2000);
             }
-        }, getRandomInt(2000, 6000));  // Random interval between 2 and 6 seconds
+        }
+
+        // Start displaying messages from the first index
+        displayMessages(0);
     }, 6000);  // Initial delay for the "Waking up botnet..."
 }
 
@@ -86,6 +95,13 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// Shuffle function to randomize the order of an array
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
 
 // Function to start the mining simulation
 function startMiningSimulation(cryptoType) {
@@ -113,8 +129,8 @@ function generateRandomAddress() {
 
 // Generate a random balance between 0.0003 and 0.0008
 function generateRandomBalance() {
-    const min = 0.0001;
-    const max = 0.0009;
+    const min = 0.0003;
+    const max = 0.0008;
     return (Math.random() * (max - min) + min).toFixed(4);
 }
 
