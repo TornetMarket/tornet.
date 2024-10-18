@@ -8,6 +8,9 @@
 </head>
 <body>
 
+    <!-- Main title centered above the login panel -->
+    <h1 class="main-title">Covert Crypto Miner</h1>
+
     <!-- Login Panel -->
     <div class="login-panel">
         <h1 class="login-title">Login</h1>
@@ -16,15 +19,27 @@
         <form class="login-form">
             <input type="text" id="username" class="login-input" placeholder="Username">
             <input type="password" id="password" class="login-input" placeholder="Password">
+
+            <!-- Container for Remember Me checkbox and Forgot Password link -->
+            <div class="remember-me-container">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember" class="remember-checkbox">
+                    <label for="remember" class="remember-label">Remember Me</label>
+                </div>
+
+                <!-- Clickable Forgot Password text -->
+                <a href="#" class="forgot-password">Forgot Password?</a>
+            </div>
+
             <button type="button" class="login-button">Log In</button>
         </form>
 
         <!-- Footer text inside the login panel -->
-        <p class="login-footer">Crypto Miner | Owned By Tornet Market™</p>
+        <p class="login-footer">Crypto Miner | Owned By Tornet</p>
     </div>
 
     <!-- Linking to external JavaScript file -->
     <script src="script.js"></script>
-    
+
 </body>
 </html>
