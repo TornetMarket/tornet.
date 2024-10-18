@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -10,6 +11,18 @@ body {
     background-size: cover;
     background-position: center;
     font-family: Arial, sans-serif;
+}
+
+/* Title above the login panel */
+.main-title {
+    color: #fff;
+    font-size: 42px;
+    font-family: 'Courier New', Courier, monospace; /* Coding theme font */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+    text-shadow: 0px 4px 10px rgba(255, 255, 255, 0.4); /* Glowing effect */
+    text-transform: uppercase;  /* All caps for a sleek effect */
 }
 
 /* Panel styles */
@@ -30,13 +43,16 @@ body {
     box-shadow: 0px 6px 20px rgba(147, 112, 219, 0.4);  /* Lavender blue shadow */
 }
 
-/* Title inside panel */
+/* Title inside the login panel */
 .login-title {
     color: #fff;
-    font-size: 24px;
-    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;  /* Modern, sleek font */
+    font-size: 26px;
+    font-weight: 600;
     text-align: center;
     margin-bottom: 20px;
+    letter-spacing: 1px;  /* Slightly spaced out for a clean, modern look */
+    text-shadow: 0px 3px 8px rgba(255, 255, 255, 0.3);  /* Subtle glow for depth */
 }
 
 /* Form and input styles */
@@ -196,4 +212,43 @@ body {
     font-size: 14px;
     font-weight: bold;
     opacity: 0.8;  /* Slightly transparent */
+}
+
+/* Container for Remember Me checkbox and Forgot Password link */
+.remember-me-container {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center vertically */
+    margin: 15px 0; /* Space above and below */
+}
+
+/* Remember Me label and checkbox styles */
+.remember-me {
+    display: flex; /* Use flexbox to align checkbox and label */
+    align-items: center; /* Center the checkbox and label vertically */
+}
+
+.remember-checkbox {
+    margin-right: 8px; /* Space between checkbox and label */
+    accent-color: #9370DB; /* Change checkbox color to lavender blue */
+}
+
+.remember-label {
+    color: #fff; /* White color for the label */
+    font-size: 14px; /* Adjust size for better readability */
+    font-weight: normal; /* Regular weight for the label */
+}
+
+/* Adjust the vertical alignment of the Forgot Password link */
+.forgot-password {
+    color: #9370DB; /* Lavender blue color */
+    font-size: 14px; /* Adjust size for readability */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth color transition */
+    margin-top: 2px; /* Adjust this value to align with the checkbox text */
+}
+
+.forgot-password:hover {
+    color: #7A5FBA; /* Darker lavender blue on hover */
+    text-decoration: underline; /* Underline on hover for emphasis */
 }
