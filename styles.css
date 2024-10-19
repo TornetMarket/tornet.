@@ -1,11 +1,11 @@
-/* Background and general styles */
+/* Center the login panel on the screen */
 body {
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Vertically center the panel */
+    align-items: center; /* Horizontally center the panel */
     height: 100vh;
     background-image: url('https://i.imgur.com/TkYtXrl.jpg');
     background-size: cover;
@@ -25,18 +25,20 @@ body {
     text-transform: uppercase;  /* All caps for a sleek effect */
 }
 
-/* Panel styles */
+/* Login Panel styles */
 .login-panel {
     background-color: #000;
-    border: 1px solid #9370DB;  /* Lavender blue */
-    width: 90%;
-    max-width: 400px;
+    border: 1px solid #9370DB; /* Lavender blue */
+    width: 90%; /* Use percentage width for responsiveness */
+    max-width: 350px; /* Shrink the panel slightly */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(147, 112, 219, 0.3);  /* Lavender blue shadow */
+    box-shadow: 0px 4px 15px rgba(147, 112, 219, 0.3); /* Lavender blue shadow */
     transform: translateZ(0);
     transition: transform 0.3s ease-in-out;
+    margin: 20px 0; /* Adds some top/bottom margin to the panel */
 }
+
 
 .login-panel:hover {
     transform: translateY(-10px);
@@ -98,11 +100,21 @@ body {
     background-color: #7A5FBA;  /* Slightly darker lavender blue */
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for smaller screens */
 @media (max-width: 600px) {
     .login-panel {
         padding: 15px;
-        width: 100%;
+        width: 95%; /* Stretch the panel width to almost full screen */
+        max-width: 320px; /* Ensure the max-width is smaller on mobile */
+    }
+
+    .login-title {
+        font-size: 22px; /* Slightly smaller title on mobile */
+    }
+
+    .login-button {
+        font-size: 14px; /* Adjust button text size on smaller screens */
+        padding: 10px;
     }
 }
 
@@ -126,57 +138,70 @@ body {
 }
 
 
-/* Panel for home.html */
+/* Styles for the home panel */
 .home-panel {
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    background-color: #000;
     border: 1px solid #9370DB; /* Lavender blue border */
-    padding: 30px;
+    width: 90%; /* Use percentage for responsiveness */
+    max-width: 400px; /* Slightly larger for home panel */
+    padding: 20px;
     border-radius: 10px;
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-    color: white;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0px 4px 15px rgba(147, 112, 219, 0.5); /* Lavender blue glow */
+    box-shadow: 0px 4px 15px rgba(147, 112, 219, 0.3); /* Lavender blue shadow */
+    text-align: center; /* Center text and buttons */
+    margin-top: 20px; /* Adds space between top and panel */
 }
 
-/* Title inside the panel */
 .panel-title {
-    font-size: 24px;
+    font-size: 28px; /* Title size */
+    color: #fff;
     margin-bottom: 20px;
-    
 }
 
-/* Container for crypto buttons */
+
+/* Styles for the crypto buttons */
 .crypto-buttons {
     display: flex;
-    justify-content: center;
-    gap: 20px; /* Space between the buttons */
+    justify-content: center; /* Distribute buttons evenly */
+    gap: 36px
 }
 
-/* Button styles remain the same */
 .crypto-button {
-    padding: 10px 20px;
     background-color: transparent;
-    border: 2px solid #9370DB; /* Lavender blue border */
-    color: white;
-    font-size: 18px;
+    border: 2px solid #9370DB; /* Lavender blue */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 16px;
     cursor: pointer;
-    transition: box-shadow 0.3s ease, background-color 0.3s ease;
-    border-radius: 5px;
 }
 
-/* Glow effect on hover */
 .crypto-button:hover {
-    box-shadow: 0px 4px 10px rgba(147, 112, 219, 0.8); /* Lavender blue glow */
+    box-shadow: 0px 4px 15px rgba(147, 112, 219, 0.5); /* Lavender blue glow effect */
+    background-color: rgba(147, 112, 219, 0.2); /* Add a lavender tint on hover */
 }
 
 /* Glow effect on click */
 .crypto-button:active {
     box-shadow: 0px 4px 15px rgba(147, 112, 219, 1); /* Stronger glow on click */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    .home-panel {
+        padding: 15px;
+        width: 95%; /* Expand panel width on small screens */
+        max-width: 350px; /* Smaller max-width */
+    }
+
+    .panel-title {
+        font-size: 24px; /* Slightly smaller title on mobile */
+    }
+
+    .crypto-button {
+        font-size: 14px; /* Adjust button size */
+        padding: 8px 15px; /* Smaller padding on buttons */
+    }
 }
 
 .mining-output {
