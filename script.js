@@ -139,3 +139,31 @@ window.onload = function () {
     const miningOutput = document.getElementById('mining-output');
     miningOutput.style.display = 'none';  // Hide the mining output box initially
 }
+
+// Wake Lock API to prevent mobile devices from going into sleep mode
+let wakeLock = null;
+
+// Function to request a wake lock
+async function requestWakeLock() {
+    try {
+        wakeLock = await navigator.wakeLock.request('screen');
+        console.log('Wake lock is active.');
+
+        // If the wake lock is released (e.g., when the screen is locked or the tab is switched), request it again
+        wakeLock.addEventListener('release', () => {
+            console.log('Wake lock has been released.');
+        });
+    } catch (err) {
+        console.error(`${err.name}, ${err.message}`);
+    }
+}
+
+// Request wake lock when the page is loaded
+window.addEventListener('load', requestWakeLock);
+
+// Re-request wake lock when the page becomes visible again (e.g., when switching tabs)
+document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible' && wakeLock !== null) {
+        requestWakeLock();
+    }
+});
