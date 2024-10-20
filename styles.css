@@ -277,3 +277,22 @@ body {
     color: #7A5FBA; /* Darker lavender blue on hover */
     text-decoration: underline; /* Underline on hover for emphasis */
 }
+
+
+.quit-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background: transparent;
+    border: 2px solid #c59bff; /* Lavender border */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.quit-button:hover {
+    background-color: #c59bff; /* Lavender color on hover */
+    color: black;
+}
