@@ -18,8 +18,12 @@
             <button class="crypto-button" onclick="startMining('XMR')">XMR</button>
             <button class="crypto-button" onclick="startMining('ETH')">ETH</button>
         </div>
+
         <!-- Hidden mining output box -->
         <div id="mining-output" class="mining-output"></div>
+
+        <!-- Quit button (hidden initially) -->
+        <button id="quit-button" class="quit-button" style="display: none;" onclick="quitMining()">Quit</button>
     </div>
 
     <script src="script.js"></script> <!-- Link to script.js -->
